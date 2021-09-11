@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelEnd : MonoBehaviour
 {
-    [SerializeField] private Transform player;
     [SerializeField] private LayerMask computerLayer;
+    [SerializeField] private string nextLevelName;
 
     private float detectionRadius = 0.2f;
 
@@ -15,9 +16,19 @@ public class LevelEnd : MonoBehaviour
         {
             if (InteractInput())
             {
-                Debug.Log("GAME END");
+                Computer.Instance.TurnOn();
+                MoveToNextLevel();
             }
         }
+    }
+
+    void MoveToNextLevel()
+    {
+        Scene activeScene = SceneManager.GetActiveScene();
+        int activeLevel = int.Parse(activeScene.name.Substring(5, activeScene.name.Length - 5));
+        string nextLevel = "Level" + (activeLevel + 1);
+        Debug.Log(nextLevel);
+        //SceneManager.LoadScene(nextLevel);
     }
 
     bool InteractInput()
@@ -27,6 +38,6 @@ public class LevelEnd : MonoBehaviour
 
     bool DetectComputer()
     {
-        return Physics2D.OverlapCircle(player.position, detectionRadius, computerLayer);
+        return Physics2D.OverlapCircle(Player.Instance.gameObject.transform.position, detectionRadius, computerLayer);
     }
 }

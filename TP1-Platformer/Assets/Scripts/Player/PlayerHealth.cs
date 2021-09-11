@@ -15,18 +15,13 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    void Update()
-    {
-        
-    }
-
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         UpdateHealthBar();
     }
 
-    void Heal(int point)
+    public void Heal(int point)
     {
         currentHealth += point;
         UpdateHealthBar();
