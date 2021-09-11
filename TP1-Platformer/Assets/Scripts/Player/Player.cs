@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         playerHealth.TakeDamage(dmg);
+        LoseScore(10);
     }
 
     public void AddScore(int scoreToHad)
@@ -40,6 +41,9 @@ public class Player : MonoBehaviour
     public void LoseScore(int scoreToLose)
     {
         score -= scoreToLose;
+        if (score < 0) {
+            score = 0;
+        }
         pointBar.UpdateScore(score);
     }
 }

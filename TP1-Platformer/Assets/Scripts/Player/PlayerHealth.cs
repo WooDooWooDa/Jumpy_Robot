@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private HealthBar healthBar;
     private int currentHealth;
+    private bool alive = true;
 
     void Start()
     {
@@ -15,9 +16,19 @@ public class PlayerHealth : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    public bool isAlive()
+    {
+        return alive;
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            alive = false;
+        }
         UpdateHealthBar();
     }
 
