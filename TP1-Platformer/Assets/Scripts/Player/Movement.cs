@@ -6,7 +6,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed = 5;
-    [SerializeField] private float jumpHeight = 12;
+    [SerializeField] private float jumpHeight = 8;
     [SerializeField] private float rayDistance = 10;
     [SerializeField] private LayerMask ladderLayer;
 
@@ -51,18 +51,13 @@ public class Movement : MonoBehaviour
             spriteRenderer.flipX = true;
         }
 
-        UpdateAnimator();  
-    }
-
-    void UpdateAnimator()
-    {
         animator.SetBool("isMoving", inputHorizontal != 0);
         animator.SetBool("isGrounded", isGrounded);
     }
 
     private void Jump()
     {
-        body.velocity = new Vector2(body.velocity.x, speed);
+        body.velocity = new Vector2(body.velocity.x, jumpHeight);
         animator.SetTrigger("jump");
         isGrounded = false;
     }
