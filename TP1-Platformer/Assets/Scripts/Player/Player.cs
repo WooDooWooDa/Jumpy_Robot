@@ -34,5 +34,12 @@ public class Player : MonoBehaviour
     public void AddScore(int scoreToHad)
     {
         score += scoreToHad;
+        pointBar.UpdateScore(score);
+    }
+
+    public void LoseScore(int scoreToLose)
+    {
+        score -= scoreToLose;
+        pointBar.UpdateScore(score);
     }
 }

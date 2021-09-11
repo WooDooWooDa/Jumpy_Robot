@@ -7,13 +7,8 @@ public class PointBar : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI pointText;
 
-    void Start()
+    public void UpdateScore(int score)
     {
-        
-    }
-
-    void Update()
-    {
-        
+        pointText.text = "Points :  " + score;
     }
 }
