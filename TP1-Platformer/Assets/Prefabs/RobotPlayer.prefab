@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpHeight: 10
+  jumpHeight: 8
   rayDistance: 10
   ladderLayer:
     serializedVersion: 2
@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da646c251d667834db530f8e12f175be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointBar: {fileID: 0}
 --- !u!95 &2269195871466276616
 Animator:
   serializedVersion: 3

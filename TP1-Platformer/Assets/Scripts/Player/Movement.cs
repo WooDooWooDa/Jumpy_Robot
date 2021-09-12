@@ -35,6 +35,10 @@ public class Movement : MonoBehaviour
     {
         float inputHorizontal = Input.GetAxis("Horizontal");
 
+        if (inputHorizontal != 0) {
+            isClimbing = false;
+        }
+
         body.velocity = new Vector2(inputHorizontal * speed, body.velocity.y);
 
         if (!isGrounded) {
@@ -64,12 +68,10 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 8 && Input.GetAxis("Vertical") > 0.1) {
-            transform.position.Set(transform.position.x, transform.position.y + 0.1f, transform.position.z);
-        }
         if (collision.gameObject.layer == 7)
         {
             isGrounded = true;
+            isClimbing = false;
         }
     }
 
@@ -90,7 +92,7 @@ public class Movement : MonoBehaviour
         if (isClimbing)
         {
             inputVertical = Input.GetAxis("Vertical");
-            body.velocity = new Vector2(body.position.x, inputVertical * speed);
+            body.velocity = new Vector2(0, inputVertical * speed);
             body.gravityScale = 0;
         }
         else
