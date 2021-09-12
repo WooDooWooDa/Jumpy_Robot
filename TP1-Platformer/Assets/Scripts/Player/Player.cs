@@ -26,6 +26,11 @@ public class Player : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
     }
 
+    public bool IsAlive()
+    {
+        return playerHealth.isAlive();
+    }
+
     public void TakeDamage(int dmg)
     {
         playerHealth.TakeDamage(dmg);
