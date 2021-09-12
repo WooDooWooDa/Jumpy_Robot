@@ -68,10 +68,17 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 7)
-        {
+        if (collision.gameObject.layer == 7) {
             isGrounded = true;
             isClimbing = false;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision) //permet de pas pouvoir sauter en etant en train de tomber dans le vide. might be a feature
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            isGrounded = false;
         }
     }
 
