@@ -76,8 +76,7 @@ public class Movement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision) //permet de pas pouvoir sauter en etant en train de tomber dans le vide. might be a feature
     {
-        if (collision.gameObject.layer == 7)
-        {
+        if (collision.gameObject.layer == 7) {
             isGrounded = false;
         }
     }
@@ -85,25 +84,18 @@ public class Movement : MonoBehaviour
     private void CheckClimbing()
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, rayDistance, ladderLayer);
-        if (hitInfo.collider != null)
-        {
-            if (Input.GetButtonDown("Jump") || Input.GetAxis("Vertical") > 0.1)
-            {
+        if (hitInfo.collider != null) {
+            if (Input.GetButtonDown("Jump") || Input.GetAxis("Vertical") > 0.1) {
                 isClimbing = true;
             }
-        }
-        else
-        {
+        } else {
             isClimbing = false;
         }
-        if (isClimbing)
-        {
+        if (isClimbing) {
             inputVertical = Input.GetAxis("Vertical");
             body.velocity = new Vector2(0, inputVertical * speed);
             body.gravityScale = 0;
-        }
-        else
-        {
+        } else {
             body.gravityScale = 1;
         }
     }
