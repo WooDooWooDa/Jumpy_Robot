@@ -24,11 +24,14 @@ public class LevelEnd : MonoBehaviour
 
     void MoveToNextLevel()
     {
-        Scene activeScene = SceneManager.GetActiveScene();
-        int activeLevel = int.Parse(activeScene.name.Substring(5, activeScene.name.Length - 5));
-        string nextLevel = "Level" + (activeLevel + 1);
-        Debug.Log(nextLevel);
-        //SceneManager.LoadScene(nextLevel);
+        //Scene activeScene = SceneManager.GetActiveScene();
+        //int activeLevel = int.Parse(activeScene.name.Substring(5, activeScene.name.Length - 5));
+        //string nextLevel = "Level" + (activeLevel + 1);
+        if (nextLevelName == null) {
+            SceneManager.LoadScene("Menu");
+        } else {
+            SceneManager.LoadScene(nextLevelName);
+        }
     }
 
     bool InteractInput()
