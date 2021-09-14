@@ -7,11 +7,14 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private HealthBar healthBar;
+
+    private ParticleSystem deathParticleSystem;
     private int currentHealth;
     private bool alive = true;
 
     void Start()
     {
+        deathParticleSystem = GetComponent<ParticleSystem>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }

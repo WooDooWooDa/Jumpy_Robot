@@ -24,9 +24,6 @@ public class LevelEnd : MonoBehaviour
 
     IEnumerator MoveToNextLevel()
     {
-        //Scene activeScene = SceneManager.GetActiveScene();
-        //int activeLevel = int.Parse(activeScene.name.Substring(5, activeScene.name.Length - 5));
-        //string nextLevel = "Level" + (activeLevel + 1);
         yield return new WaitForSeconds(3);
         if (nextLevel == 0) {
             SceneManager.LoadScene("Menu");

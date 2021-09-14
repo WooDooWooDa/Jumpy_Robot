@@ -8,7 +8,7 @@ public class Computer : MonoBehaviour
 
     [SerializeField] private Sprite computerOnSprite;
     private SpriteRenderer spriteRenderer;
-    private ParticleSystem particleSystem;
+    private ParticleSystem onParticleSystem;
 
     private void Awake()
     {
@@ -24,12 +24,12 @@ public class Computer : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        particleSystem = GetComponentInChildren<ParticleSystem>();
+        onParticleSystem = GetComponentInChildren<ParticleSystem>();
     }
 
     public void TurnOn()
     {
         spriteRenderer.sprite = computerOnSprite;
-        particleSystem.Play();
+        onParticleSystem.Play();
     }
 }

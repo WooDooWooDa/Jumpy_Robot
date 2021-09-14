@@ -28,10 +28,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Enter trigger");
         if (collision.gameObject.layer == 12) //water
         {
-            TakeDamage(1);
+            TakeDamage(3);
         }
     }
 

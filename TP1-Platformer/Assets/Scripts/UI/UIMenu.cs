@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class UIMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject deathPanel;
 
     private bool isPause = false;
 
     private void Awake()
     {
+        Time.timeScale = 1;
         pausePanel.SetActive(false);
+        deathPanel.SetActive(false);
     }
 
     private void Update()
@@ -21,29 +24,41 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    public void OnPlayerDeath()
+    {
+        PauseGame();
+        deathPanel.SetActive(true);
+    }
+
     void ToggleGame()
     {
         pausePanel.SetActive(!isPause);
         if (!isPause) {
-            Debug.Log("pause");
+
             PauseGame();
         } else {
-            Debug.Log("Resume");
             ResumeGame();
         }
         isPause = !isPause;
     }
 
-    void PauseGame()
+    public void PauseGame()
     {
-        
         Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
-        pausePanel.SetActive(false);
         Time.timeScale = 1;
+        pausePanel.SetActive(false);
+        deathPanel.SetActive(false);
+    }
+
+    public void Restart()
+    {
+        ResumeGame();
+        Scene activeScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(activeScene.name);
     }
 
     public void QuitToMenu()

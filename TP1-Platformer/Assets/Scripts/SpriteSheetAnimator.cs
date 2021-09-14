@@ -17,6 +17,5 @@ public class SpriteSheetAnimator : MonoBehaviour
             return;
         
         spriteRenderer.sprite = sprites[index];
-        //Debug.Log(sprites[index].name);
     }
 }

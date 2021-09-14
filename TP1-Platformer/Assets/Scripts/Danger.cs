@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Danger : MonoBehaviour
 {
-    private ParticleSystem particleSystem;
+    private ParticleSystem damageParticleSystem;
     private int damage = 1;
 
     private void Start()
     {
-        particleSystem = GetComponentInChildren<ParticleSystem>();
+        damageParticleSystem = GetComponentInChildren<ParticleSystem>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -18,8 +18,8 @@ public class Danger : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Player.Instance.TakeDamage(damage);
-            particleSystem.transform.position = collision.gameObject.transform.position;
-            particleSystem.Play();
+            damageParticleSystem.transform.position = collision.gameObject.transform.position;
+            damageParticleSystem.Play();
         }
     }
 

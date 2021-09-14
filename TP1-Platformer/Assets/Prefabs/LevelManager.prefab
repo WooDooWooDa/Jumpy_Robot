@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8773587100882586214}
   - component: {fileID: 8773587100882586215}
   - component: {fileID: 5782652101862595398}
-  - component: {fileID: 2291815319339611834}
+  - component: {fileID: 835311099}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -48,7 +48,7 @@ MonoBehaviour:
   computerLayer:
     serializedVersion: 2
     m_Bits: 512
-  nextLevel: 0
+  nextLevel: 2
 --- !u!114 &5782652101862595398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e801c2535d8ca974baccca41a736715c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2291815319339611834
+  menu: {fileID: 835311099}
+--- !u!114 &835311099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,3 +75,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 0}
+  deathPanel: {fileID: 0}

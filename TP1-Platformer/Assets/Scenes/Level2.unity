@@ -1201,6 +1201,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Some platform move back and forth
       objectReference: {fileID: 0}
+    - target: {fileID: 2803360347615959920, guid: 0814945cdece15845a1f5c436cd80a25, type: 3}
+      propertyPath: m_fontColorGradientPreset
+      value: 
+      objectReference: {fileID: 11400000, guid: 34bcaea5d1403d44ba5c5c621cb8fbb7, type: 2}
     - target: {fileID: 2803360347615959927, guid: 0814945cdece15845a1f5c436cd80a25, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6980,6 +6984,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 835311099, guid: 22747d14f7fd9af42938a22febc1df4c, type: 3}
+      propertyPath: deathPanel
+      value: 
+      objectReference: {fileID: 2045482981}
+    - target: {fileID: 835311099, guid: 22747d14f7fd9af42938a22febc1df4c, type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 2045482980}
     - target: {fileID: 2291815319339611834, guid: 22747d14f7fd9af42938a22febc1df4c, type: 3}
       propertyPath: pausePanel
       value: 
@@ -7042,6 +7054,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22747d14f7fd9af42938a22febc1df4c, type: 3}
+--- !u!114 &1609867178 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 835311099, guid: 22747d14f7fd9af42938a22febc1df4c, type: 3}
+  m_PrefabInstance: {fileID: 1609867177}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e170c33701536ea43abbfb1a849bd1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1648421681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7406,6 +7429,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 165632821, guid: 7b4928a362c623a48b838ae585a2643f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1609867178}
+    - target: {fileID: 165632821, guid: 7b4928a362c623a48b838ae585a2643f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163262016787136573, guid: 7b4928a362c623a48b838ae585a2643f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1609867178}
+    - target: {fileID: 1163262016787136573, guid: 7b4928a362c623a48b838ae585a2643f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
     - target: {fileID: 3937726033362936352, guid: 7b4928a362c623a48b838ae585a2643f, type: 3}
       propertyPath: m_SortingLayer
       value: 5
@@ -7547,6 +7586,11 @@ PrefabInstance:
 --- !u!1 &2045482980 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8433966562743529779, guid: 7b4928a362c623a48b838ae585a2643f, type: 3}
+  m_PrefabInstance: {fileID: 2045482979}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2045482981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1365508564, guid: 7b4928a362c623a48b838ae585a2643f, type: 3}
   m_PrefabInstance: {fileID: 2045482979}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2052272208
