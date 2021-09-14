@@ -17,6 +17,7 @@ public class LevelEnd : MonoBehaviour
             if (InteractInput())
             {
                 Computer.Instance.TurnOn();
+                PlayerPrefs.SetInt("levelReached", nextLevel);
                 StartCoroutine(MoveToNextLevel());
             }
         }
