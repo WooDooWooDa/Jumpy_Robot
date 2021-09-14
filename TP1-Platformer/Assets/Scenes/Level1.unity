@@ -711,6 +711,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b4928a362c623a48b838ae585a2643f, type: 3}
+--- !u!1 &394937052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8433966562743529779, guid: 7b4928a362c623a48b838ae585a2643f, type: 3}
+  m_PrefabInstance: {fileID: 394937051}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &397061103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,6 +1262,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2291815319339611834, guid: 22747d14f7fd9af42938a22febc1df4c, type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 394937052}
     - target: {fileID: 8773587100882586212, guid: 22747d14f7fd9af42938a22febc1df4c, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -1304,6 +1313,10 @@ PrefabInstance:
     - target: {fileID: 8773587100882586214, guid: 22747d14f7fd9af42938a22febc1df4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8773587100882586215, guid: 22747d14f7fd9af42938a22febc1df4c, type: 3}
+      propertyPath: nextLevel
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22747d14f7fd9af42938a22febc1df4c, type: 3}

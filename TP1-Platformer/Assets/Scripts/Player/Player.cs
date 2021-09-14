@@ -26,6 +26,15 @@ public class Player : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Enter trigger");
+        if (collision.gameObject.layer == 12) //water
+        {
+            TakeDamage(1);
+        }
+    }
+
     public bool IsAlive()
     {
         return playerHealth.isAlive();
@@ -34,7 +43,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         playerHealth.TakeDamage(dmg);
-        LoseScore(10);
+        LoseScore(20);
     }
 
     public void AddScore(int scoreToHad)
