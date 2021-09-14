@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelEnd : MonoBehaviour
 {
     [SerializeField] private LayerMask computerLayer;
-    [SerializeField] private string nextLevelName;
+    [SerializeField] private int nextLevel;
 
     private float detectionRadius = 0.2f;
 
@@ -17,20 +17,21 @@ public class LevelEnd : MonoBehaviour
             if (InteractInput())
             {
                 Computer.Instance.TurnOn();
-                MoveToNextLevel();
+                StartCoroutine(MoveToNextLevel());
             }
         }
     }
 
-    void MoveToNextLevel()
+    IEnumerator MoveToNextLevel()
     {
         //Scene activeScene = SceneManager.GetActiveScene();
         //int activeLevel = int.Parse(activeScene.name.Substring(5, activeScene.name.Length - 5));
         //string nextLevel = "Level" + (activeLevel + 1);
-        if (nextLevelName == null) {
+        yield return new WaitForSeconds(3);
+        if (nextLevel == 0) {
             SceneManager.LoadScene("Menu");
         } else {
-            SceneManager.LoadScene(nextLevelName);
+            SceneManager.LoadScene("Level" + nextLevel);
         }
     }
 

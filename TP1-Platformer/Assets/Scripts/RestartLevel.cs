@@ -6,13 +6,17 @@ using UnityEngine.SceneManagement;
 public class RestartLevel : MonoBehaviour
 {
 
-    
     void Update()
     {
         if (!Player.Instance.IsAlive())
         {
-            Scene activeScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(activeScene.name);
+            Restart();
         }
+    }
+
+    public void Restart()
+    {
+        Scene activeScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(activeScene.name);
     }
 }

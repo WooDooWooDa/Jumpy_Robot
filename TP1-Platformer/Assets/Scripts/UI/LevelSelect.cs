@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,8 +20,8 @@ public class LevelSelect : MonoBehaviour
             }
         }
     }
-    public void SelectLevel(string levelNumber)
+    public void SelectLevel(TextMeshProUGUI buttonText)
     {
-        SceneManager.LoadScene("Level" + levelNumber);
+        SceneManager.LoadScene("Level" + buttonText.text);
     }
 }
