@@ -222,6 +222,10 @@ PrefabInstance:
       propertyPath: m_PlaneDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5211284967055498024, guid: 7b4928a362c623a48b838ae585a2643f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1074510803
+      objectReference: {fileID: 0}
     - target: {fileID: 5211284967055498027, guid: 7b4928a362c623a48b838ae585a2643f, type: 3}
       propertyPath: m_Name
       value: UICanvas
