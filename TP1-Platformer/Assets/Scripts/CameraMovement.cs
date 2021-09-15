@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private Transform player;
+
+    private bool isFollowingPlayer = false;
     private Vector3 offset;
 
     void Start()
@@ -15,6 +18,16 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(player.position.x, transform.position.y, player.position.z + offset.z);
+        if (isFollowingPlayer) {
+            transform.position = new Vector3(player.position.x, Player.Instance.gameObject.transform.position.y + offset.y, player.position.z + offset.z);
+        } else {
+            transform.position = new Vector3(player.position.x, offset.y, player.position.z + offset.z);
+        }
+        
+    }
+
+    public void IsFollowingPlayer(bool value)
+    {
+        isFollowingPlayer = value;
     }
 }

@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed = 5;
     [SerializeField] private float jumpHeight = 8;
-    [SerializeField] private float rayDistance = 10;
+    [SerializeField] private float rayDistance = 2;
     [SerializeField] private LayerMask ladderLayer;
 
     private Rigidbody2D body;
@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
 
     private float inputHorizontal;
     private float inputVertical;
+    private float defaultGravity = 1;
 
     private void Awake()
     {
@@ -59,6 +60,13 @@ public class Movement : MonoBehaviour
         animator.SetBool("isGrounded", isGrounded);
     }
 
+    public void FlipGravity()
+    {
+        isClimbing = false;
+        defaultGravity = -1;
+        spriteRenderer.flipY = true;
+    }
+
     private void Jump()
     {
         body.velocity = new Vector2(body.velocity.x, jumpHeight);
@@ -85,7 +93,7 @@ public class Movement : MonoBehaviour
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, rayDistance, ladderLayer);
         if (hitInfo.collider != null) {
-            if (Input.GetButtonDown("Jump") || Input.GetAxis("Vertical") > 0.1) {
+            if ((Input.GetButtonDown("Jump") || Input.GetAxis("Vertical") > 0.1) && hitInfo.distance < 2.5f) {
                 isClimbing = true;
             }
         } else {
@@ -96,7 +104,7 @@ public class Movement : MonoBehaviour
             body.velocity = new Vector2(0, inputVertical * speed);
             body.gravityScale = 0;
         } else {
-            body.gravityScale = 1;
+            body.gravityScale = defaultGravity;
         }
     }
 }
