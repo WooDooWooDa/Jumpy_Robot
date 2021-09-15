@@ -17,7 +17,6 @@ public class LevelEnd : MonoBehaviour
             if (InteractInput())
             {
                 Computer.Instance.TurnOn();
-                PlayerPrefs.SetInt("levelReached", nextLevel);
                 StartCoroutine(MoveToNextLevel());
             }
         }
@@ -29,6 +28,7 @@ public class LevelEnd : MonoBehaviour
         if (nextLevel == 0) {
             SceneManager.LoadScene("Menu");
         } else {
+            PlayerPrefs.SetInt("levelReached", nextLevel);
             SceneManager.LoadScene("Level" + nextLevel);
         }
     }
