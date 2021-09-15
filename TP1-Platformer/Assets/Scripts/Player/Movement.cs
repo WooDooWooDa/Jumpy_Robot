@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     private bool isGrounded;
     private bool isClimbing;
 
+    private float isFlipped = 1;
     private float inputHorizontal;
     private float inputVertical;
     private float defaultGravity = 1;
@@ -43,7 +44,7 @@ public class Movement : MonoBehaviour
         body.velocity = new Vector2(inputHorizontal * speed, body.velocity.y);
 
         if (!isGrounded) {
-            transform.Rotate(new Vector3(0, 0, -inputHorizontal / 5));
+            transform.Rotate(new Vector3(0, 0, -inputHorizontal / 5 * isFlipped));
         }
 
         if ((Input.GetButtonDown("Jump") || Input.GetAxis("Vertical") > 0.1) && isGrounded) {
@@ -62,6 +63,7 @@ public class Movement : MonoBehaviour
 
     public void FlipGravity()
     {
+        isFlipped = -1;
         isClimbing = false;
         defaultGravity = -1;
         spriteRenderer.flipY = true;
@@ -69,7 +71,7 @@ public class Movement : MonoBehaviour
 
     private void Jump()
     {
-        body.velocity = new Vector2(body.velocity.x, jumpHeight);
+        body.velocity = new Vector2(body.velocity.x, jumpHeight * isFlipped);
         animator.SetTrigger("jump");
         isGrounded = false;
     }
