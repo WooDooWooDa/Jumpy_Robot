@@ -34,17 +34,16 @@ public class UIMenu : MonoBehaviour
     {
         pausePanel.SetActive(!isPause);
         if (!isPause) {
-
             PauseGame();
         } else {
             ResumeGame();
         }
-        isPause = !isPause;
     }
 
     public void PauseGame()
     {
         Time.timeScale = 0;
+        isPause = true;
     }
 
     public void ResumeGame()
@@ -52,6 +51,7 @@ public class UIMenu : MonoBehaviour
         Time.timeScale = 1;
         pausePanel.SetActive(false);
         deathPanel.SetActive(false);
+        isPause = false;
     }
 
     public void Restart()
