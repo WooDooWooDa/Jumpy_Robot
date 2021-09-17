@@ -63,10 +63,10 @@ public class Movement : MonoBehaviour
 
     public void FlipGravity()
     {
-        isFlipped = -1;
+        isFlipped = isFlipped * -1;
         isClimbing = false;
-        defaultGravity = -1;
-        spriteRenderer.flipY = true;
+        defaultGravity = defaultGravity * -1;
+        spriteRenderer.flipY = !spriteRenderer.flipY;
     }
 
     private void Jump()

@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Awake()
+    {
+        Screen.SetResolution(1920, 1080, false);
+    }
 
     public void PlayGame()
     {
