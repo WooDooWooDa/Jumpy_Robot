@@ -191,6 +191,8 @@ MonoBehaviour:
   ladderLayer:
     serializedVersion: 2
     m_Bits: 256
+  driveClip: {fileID: 8300000, guid: 6af94ae94c6bc64489b2659e6caac942, type: 3}
+  idleClip: {fileID: 8300000, guid: e610045ce9e34c648bb3371f4c53a38a, type: 3}
 --- !u!114 &3664216673792986718
 MonoBehaviour:
   m_ObjectHideFlags: 0

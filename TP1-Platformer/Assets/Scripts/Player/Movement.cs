@@ -9,9 +9,12 @@ public class Movement : MonoBehaviour
     [SerializeField] private float jumpHeight = 8;
     [SerializeField] private float rayDistance = 2;
     [SerializeField] private LayerMask ladderLayer;
+    [SerializeField] private AudioClip driveClip;
+    [SerializeField] private AudioClip idleClip;
 
     private Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
     private Animator animator;
     private bool isGrounded;
     private bool isClimbing;
@@ -26,6 +29,7 @@ public class Movement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
