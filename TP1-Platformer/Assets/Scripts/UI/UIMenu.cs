@@ -7,14 +7,13 @@ public class UIMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject deathPanel;
+    [SerializeField] private GameObject winPanel;
 
     private bool isPause = false;
 
     private void Awake()
     {
-        Time.timeScale = 1;
-        pausePanel.SetActive(false);
-        deathPanel.SetActive(false);
+        ResumeGame();
     }
 
     private void Update()
@@ -22,6 +21,12 @@ public class UIMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) {
             ToggleGame();
         }
+    }
+    
+    public void OnPlayerWin()
+    {
+        winPanel.SetActive(true);
+        StartCoroutine(PauseIn(3));
     }
 
     public void OnPlayerDeath()
@@ -51,6 +56,7 @@ public class UIMenu : MonoBehaviour
         Time.timeScale = 1;
         pausePanel.SetActive(false);
         deathPanel.SetActive(false);
+        winPanel.SetActive(false);
         isPause = false;
     }
 
@@ -64,5 +70,11 @@ public class UIMenu : MonoBehaviour
     public void QuitToMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    IEnumerator PauseIn(int sec)
+    {
+        yield return new WaitForSeconds(sec);
+        PauseGame();
     }
 }

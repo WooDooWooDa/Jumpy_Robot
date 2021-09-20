@@ -18,7 +18,7 @@ TagManager:
   - Object
   - Signs
   - Water
-  - 
+  - Button
   - 
   - 
   - 
@@ -44,7 +44,7 @@ TagManager:
   - name: Ground
     uniqueID: 64408839
     locked: 0
-  - name: Interactable
+  - name: Button
     uniqueID: 3725129971
     locked: 0
   - name: Player
