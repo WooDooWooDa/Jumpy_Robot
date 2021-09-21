@@ -38,6 +38,9 @@ public class PlayerHealth : MonoBehaviour
     public void Heal(int point)
     {
         currentHealth += point;
+        if (currentHealth > maxHealth) {
+            currentHealth = maxHealth;
+        }
         UpdateHealthBar();
     }
 

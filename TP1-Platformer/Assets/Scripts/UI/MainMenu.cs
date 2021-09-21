@@ -15,11 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        if (PlayerPrefs.GetInt("levelReached") == 1) {
-            SceneManager.LoadScene("Level1");
-        } else {
-            levelSelect.SetActive(true);
-        }
+        
     }
 
     public void QuitGame()

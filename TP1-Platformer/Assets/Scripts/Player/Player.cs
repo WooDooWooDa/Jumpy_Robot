@@ -34,6 +34,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void Heal(int points)
+    {
+        playerHealth.Heal(points);
+    }
+
     public bool IsAlive()
     {
         return playerHealth.isAlive();
