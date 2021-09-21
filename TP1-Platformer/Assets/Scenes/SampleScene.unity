@@ -134,6 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec15e45e72d726f4ca7f40f56381ef2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!20 &299165178 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 793836041979206813, guid: 87c465a5f0f291b45b52bffbd9fc5dd9, type: 3}
+  m_PrefabInstance: {fileID: 793836041556927714}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &512803771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,6 +1464,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9018089379197238764, guid: 60d40003c0cc179488e386d578cdb68e, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 299165178}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60d40003c0cc179488e386d578cdb68e, type: 3}
 --- !u!114 &1800491677 stripped

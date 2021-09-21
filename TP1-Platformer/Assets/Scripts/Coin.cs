@@ -5,22 +5,25 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     private Animator animator;
+    private AudioSource audioSource;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        animator.SetTrigger("Taken");
-        Player.Instance.AddScore(20);
+        Collect();
         Destroy(this.gameObject, 0.5f);
+    }
+
+    private void Collect()
+    {
+        animator.SetTrigger("Taken");
+        audioSource.Play();
+        Player.Instance.AddScore(20);
+        
     }
 }

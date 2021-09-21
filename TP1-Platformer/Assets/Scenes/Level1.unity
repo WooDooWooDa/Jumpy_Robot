@@ -1219,6 +1219,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3565548501593148347, guid: 60d40003c0cc179488e386d578cdb68e, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5527762170979409908, guid: 60d40003c0cc179488e386d578cdb68e, type: 3}
       propertyPath: m_Name
       value: LevelManagerWithUI

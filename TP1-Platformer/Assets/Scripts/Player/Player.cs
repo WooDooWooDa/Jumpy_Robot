@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PointBar pointBar;
 
     private PlayerHealth playerHealth;
+    private AudioSource damageSound;
     private int score = 0;
 
     private void Awake()
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         playerHealth = GetComponent<PlayerHealth>();
+        damageSound = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,6 +49,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         playerHealth.TakeDamage(dmg);
+        damageSound.Play();
         LoseScore(20);
     }
 
