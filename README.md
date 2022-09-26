@@ -3,7 +3,7 @@
 <img src="https://user-images.githubusercontent.com/72167870/192329030-abe9c8d4-229b-4c52-8607-20f192e0208b.png" width="512"/>
 
 ## Contexte
-Ce projet à été réaliser pour moi-même dans le cadre d'un cours suivi au Cégep et réaliser en 2 semaines. Le jeu met en pratique les fonctionnalités basiques d'un jeu de platforme tel que : Déplacement 2D, animations simples, collecte de point, dangers à éviter et des niveaux progressivement plus difficiles.
+Ce projet à été développer par moi-même dans le cadre d'un cours suivi au Cégep et réaliser en 2 semaines avec le logiciel Unity. Le jeu présente des fonctionnalités basiques d'un jeu de platforme tel que : le déplacement 2D, des animations simples, la collecte de point, des dangers à éviter et des niveaux progressivement plus difficiles.
 
 ## Le Jeu
 Jumpy robot est un jeu de platforme tout simple présentant 5 niveaux progressivement plus difficiles. Le but est de se rendre à l'ordinateur au bout du niveau en évitant les obstacles dangereux qui se trouvent sur le chemin. Il est possible de récuperer des pièces au travers des niveaux.
